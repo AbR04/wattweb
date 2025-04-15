@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Green Future - Renewable Energy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Green Future</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#types">Types</a>
+      <a href="#interactive">Explore</a>
+      <a href="#contact">Contact</a>
+      <button id="toggleTheme" class="theme-toggle" onclick="toggleDarkMode()">
+        <span id="themeIcon">🌞</span>
+      </button>      
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2 id="typingText"></h2>
+    <p>Together we can make the world greener.</p>
+  </section>
+
+  <section id="about">
+    <h2>What is Renewable Energy?</h2>
+    <p>Renewable energy comes from natural sources that are constantly replenished, like the sun, wind, and water.</p>
+  </section>
+
+  <section id="types">
+    <h2>Types of Renewable Energy</h2>
+    <div class="card-container">
+      <div class="type-card">☀️ Solar</div>
+      <div class="type-card">💨 Wind</div>
+      <div class="type-card">💧 Hydro</div>
+      <div class="type-card">🌱 Biomass</div>
+      <div class="type-card">🌋 Geothermal</div>
+    </div>
+  </section>
+
+  <section id="interactive">
+    <h2>Solar Energy Savings Calculator</h2>
+    <p>Estimate your potential with clean energy 🌞</p>
+  
+    <div class="calc-form">
+      <select id="country" onchange="setSunlightHours()">
+        <option value="">🌍 Select your country</option>
+        <option value="4.5">UK</option>
+        <option value="5.5">USA</option>
+        <option value="6.0">India</option>
+        <option value="7.0">Australia</option>
+        <option value="3.5">Germany</option>
+      </select>
+  
+      <input type="number" id="sunlight" placeholder="Avg sunlight hours/day" required />
+      <input type="number" id="roof" placeholder="Roof area (m²)" required />
+      <button onclick="calculateSavings()">Calculate</button>
+    </div>
+  
+    <div class="energy-visual">
+      <div class="bar-container">
+        <div id="energy-bar"></div>
+      </div>
+      <p id="result" class="energy-result"></p>
+    </div>
+  </section>
+  <p id="treeCount" class="tree-counter"></p>
+
+  <section id="facts">
+    <h2>Did You Know? 🤯</h2>
+    <p>Click below to learn cool facts about renewable energy!</p>
+    <button onclick="generateFact()">Get a Fun Fact</button>
+    <p id="funFact" class="fun-fact-output"></p>
+  </section>
+  
+
+  <section id="contact">
+    <h2>Join the Green Movement</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <button type="submit">Get Involved</button>
+    </form>
+  </section>
+
+  <section id="spinner">
+    <h2>Spin the Eco Wheel ♻️</h2>
+    <p>Get a quick tip to live more sustainably!</p>
+    <button onclick="spinTip()">🎯 Spin</button>
+    <p id="tipResult" class="tip-output"></p>
+  </section>
+
+  <section id="memoryGame">
+    <h2>Match the Energy Icons 🧠</h2>
+    <p>Flip and match the icons — can you beat it?</p>
+    <div class="memory-grid" id="gameBoard"></div>
+    <p id="gameStatus"></p>
+  </section>
+  
+  <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-click-tone-1126.mp3"></audio>
+  <audio id="winSound" src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3"></audio>
+
+
+  <footer>
+    <p>&copy; 2025 Green Future</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
